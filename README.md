@@ -6,4 +6,4 @@ You can learn more at [adventofcode.com](https://adventofcode.com/2019/about).
 
 ## Leaderboard
 
-Join []CodeSupport](https://codesupport.dev)'s Advent of Code [leaderboard](https://adventofcode.com/2019/leaderboard/private) and use code `490120-c246c110`.
+Join [CodeSupport](https://codesupport.dev)'s Advent of Code [leaderboard](https://adventofcode.com/2019/leaderboard/private) and use code `490120-c246c110`.
