@@ -5,8 +5,12 @@ data = open("{0}/data.txt".format(directory), "r").read()
 
 opcodes = [int(i) for i in data.split(",")]
 
+# Part 1 uses these numbers:
 opcodes[1] = 12
 opcodes[2] = 2
+# Part 2 uses these numbers:
+# opcodes[1] = 82
+# opcodes[2] = 26
 
 for i in range(0, len(opcodes), 4):
     x = opcodes[i + 1]
