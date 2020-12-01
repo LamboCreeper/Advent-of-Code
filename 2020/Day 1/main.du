@@ -1,0 +1,52 @@
+def mapToNumbers(numbers) {
+	var res = [];
+
+	for (var i = 0; i < numbers.len(); ++i) {
+		res.push(numbers[i].toNumber());
+	}
+
+	return res;
+}
+
+print("Part 1");
+
+with("./data.txt", "r") {
+	var numbersAsStrings = file.read().split("\n");
+	var numbers = mapToNumbers(numbersAsStrings);
+
+	for (var i = 0; i < numbers.len(); ++i) {
+		for (var j = 0; j < numbers.len(); ++j) {
+			if (numbers[i] + numbers[j] == 2020) {
+				print("FOUND: " + i.toString() + ", " + j.toString());
+
+				var res = numbers[i] * numbers[j];
+
+				print("ANSWER: " + res.toString());
+			}
+		}
+	}
+}
+
+print("Part 2");
+
+with("./data.txt", "r") {
+	var numbersAsStrings = file.read().split("\n");
+	var numbers = mapToNumbers(numbersAsStrings);
+
+	for (var i = 0; i < numbers.len(); ++i) {
+		for (var j = 0; j < numbers.len(); ++j) {
+			for (var l = 0; l < numbers.len(); ++l) {
+				if (numbers[i] + numbers[j] + numbers[l] == 2020) {
+					print("FOUND: " + i.toString() + ", " + j.toString() + ", " + l.toString());
+
+					var res = numbers[i] * numbers[j] * numbers[l];
+
+					//var res = numbers[i] * numbers[j] * numbers[l];
+
+					print("ANSWER: " + res.toString());
+				}
+			}
+		}
+	}
+}
+
