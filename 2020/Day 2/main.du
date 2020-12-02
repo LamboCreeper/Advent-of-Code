@@ -1,0 +1,60 @@
+print("Part 1");
+with("data.txt", "r") {
+	var inputValues = file.read().split("\n");
+	var valid = 0;
+
+	for (var i = 0; i < inputValues.len(); ++i) {
+		var value = inputValues[i].split(":");
+		var conditions = value[0].split(" ");
+		var range = conditions[0].split("-");
+
+		var min = range[0].toNumber();
+		var max = range[1].toNumber();
+		var char = conditions[1];
+		var password = value[1];
+
+		if (password.contains(char)) {
+			var matches = 0;
+
+			for (var j = 0; j < password.len(); ++j) {
+				if (password[j] == char) {
+					++matches;
+				}
+			}
+
+			if (matches >= min and matches <= max) {
+				++valid;
+			}
+		}
+	}
+
+	print(valid);
+}
+
+print("Part 2");
+with("data.txt", "r") {
+	var inputValues = file.read().split("\n");
+	var valid = 0;
+
+	for (var i = 0; i < inputValues.len(); ++i) {
+		var value = inputValues[i].split(":");
+		var conditions = value[0].split(" ");
+		var range = conditions[0].split("-");
+
+		var validPos = range[0].toNumber();
+		var invalidPos = range[1].toNumber();
+		var char = conditions[1];
+		var password = value[1].strip();
+
+		if (password.contains(char)) {
+			var isOne = password[validPos - 1] == char and password[invalidPos - 1] != char;
+			var isTwo = password[validPos - 1] != char and password[invalidPos - 1] == char;
+
+			if ((isOne or isTwo) and !(isOne and isTwo)) {
+				++valid;
+			}
+		}
+	}
+
+	print(valid);
+}
